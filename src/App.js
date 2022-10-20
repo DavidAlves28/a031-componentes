@@ -1,5 +1,7 @@
 import React from "react";
-import CardVideo from "./components/CardVideo";
+import CardVideo from "./components/CardVideo/CardVideo";
+import { HeaderPage,ContainerTela, BarraNav, TelaInteira, FooterTela } from "./components/Styles/ContainerTela";
+import { GlobalStyle } from "./GlobalStyle/GlobalStyle";
 import "./styles.css";
 
 
@@ -12,23 +14,24 @@ export default function App() {
  
   return (
     <div>
-      <div className="tela-inteira">
-        <header>
+    <GlobalStyle/>
+      <TelaInteira>
+        <HeaderPage>
           <h1>LabeTube</h1>
           <input type="text" placeholder="Busca" id="campoDeBusca" />
-        </header>
+        </HeaderPage>
 
-        <main>
-          <nav className="menu-vertical">
+        <ContainerTela>
+          <BarraNav>
             <ul>
-              <li className="botoes-meunu-vertical">Início</li>
-              <li className="botoes-meunu-vertical">Em alta</li>
-              <li className="botoes-meunu-vertical">Inscrições</li>
+              <li>Início</li>
+              <li>Em alta</li>
+              <li>Inscrições</li>
               <hr />
-              <li className="botoes-meunu-vertical">Originais</li>
-              <li className="botoes-meunu-vertical">Histórico</li>
+              <li>Originais</li>
+              <li>Histórico</li>
             </ul>
-          </nav>
+          </BarraNav>
           <CardVideo 
             titulo={dados.titulo}
             imagem={dados.imagem}
@@ -47,12 +50,12 @@ export default function App() {
             />
            
         
-        </main>
+        </ContainerTela>
 
-        <footer>
+        <FooterTela>
           <h4>Oi! Eu moro no footer!</h4>
-        </footer>
-      </div>
+        </FooterTela>
+      </TelaInteira>
     </div>
   );
 }

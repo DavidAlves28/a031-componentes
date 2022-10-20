@@ -1,6 +1,7 @@
 import React from "react";
-import InfosUsuario from "./InfosUsuario";
-import perfil from "../img/meliodas.jpg"
+import InfosUsuario from "../InfoUsuario/InfosUsuario";
+import perfil from "./img/meliodas.jpg"
+import { BoxPrincipal, Imagem, PainelVideos } from "./style";
 
 export default function (props) {
   const img = perfil
@@ -10,11 +11,11 @@ export default function (props) {
   }
   {/* Exercicio Props e Componentes */ }
   return (
-    <section className="painel-de-videos">
-      <div className="box-pagina-principal" onClick={reproduzVideo}>
+    <PainelVideos>
+      <BoxPrincipal  onClick={reproduzVideo}>
          {/*Acessando Objeto*/}
-        <img src={props.imagem} alt="" />
-        <h4>{props.titulo}</h4>
+        <Imagem src={props.imagem} alt="" />
+        {props.titulo}
         
 
 
@@ -23,9 +24,9 @@ export default function (props) {
           autor={autor} 
           img={img}
         />
-      </div>
+      </BoxPrincipal>
 
 
-    </section>
+    </PainelVideos>
   )
 }
